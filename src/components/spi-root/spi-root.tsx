@@ -15,8 +15,11 @@ export class SpiRoot {
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="spi-home" exact={true} />
+              <stencil-route url='/addCandidat' component='api-addcandidat' />
+              <stencil-route url="/candidats/search/:name" component="spi-search" exact={true} />
             </stencil-route-switch>
           </stencil-router>
+
         </main>
       </div>
     );

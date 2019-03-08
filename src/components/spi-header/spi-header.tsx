@@ -17,49 +17,70 @@ export class SpiHeader {
   render() {
     return (
       <nav
-        class="navbar is-light has-shadow is-spaced"
+        class="navbar is-light has-shadow "
         role="navigation"
         aria-label="main navigation"
       >
         <div class="container">
-          <div class="navbar-brand">
-            <span class="navbar-item">
-              <strong>SPI-ADM</strong>
+        <div class="navbar-brand">
+        <span class="navbar-item">
+              <a href="/"><strong>SPI-ADM</strong></a>
             </span>
 
-            <a
-              role="button"
-              class="navbar-burger burger"
-              aria-label="menu"
-              aria-expanded="false"
-              data-target="navbar-content"
-              onClick={() => this.toggleBurger()}
-              ref={el => (this.burger = el)}
-            >
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-            </a>
-          </div>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+  </div>
+  <div class="navbar-end">
+          <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Candidats
+        </a>
 
-          <div
-            id="navbar-content"
-            class="navbar-menu"
-            ref={el => (this.menu = el)}
-          >
-            <div class="navbar-start">
-              <span class="navbar-item">
-                <stencil-route-link url="/adm/" activeClass="none">
-                  <span class="has-text-primary">
-                    <i class="fas fa-tools" />
-                  </span>{" "}
-                  Formation
-                </stencil-route-link>
-              </span>
+        <div class="navbar-dropdown">
+          <a class="navbar-item" href="/addCandidat">
+            Ajouter Candidat
+          </a>
+          <hr class="navbar-divider"/>
+          <a class="navbar-item">
+            ...
+          </a>
+        </div>
+      </div>
+      
 
-            </div>
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Enseignants
+        </a>
 
-          </div>
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            Ajouter
+          </a>
+
+          <hr class="navbar-divider"/>
+          <a class="navbar-item">
+            ...
+          </a>
+        </div>
+      </div>
+
+      <div class="navbar-item has-dropdown is-hoverable">
+        <a class="navbar-link">
+          Infos
+        </a>
+
+        <div class="navbar-dropdown">
+          <a class="navbar-item">
+            About
+          </a>
+          
+        </div>
+      </div>
+      </div>
         </div>
       </nav>
     );

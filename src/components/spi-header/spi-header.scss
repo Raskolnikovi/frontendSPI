@@ -1,6 +1,7 @@
 @import "../../../node_modules/bulma/sass/components/navbar.sass";
 @import "../../../node_modules/bulma/sass/elements/button.sass";
 
+
 .navbar-brand .navbar-item {
     font-size: 3.8em;
 }
@@ -19,4 +20,11 @@
   }
 .navbar a:hover {
     color: $link;
+}
+.navbar-brand .navbar-item {
+    font-size: 20px;
+}
+
+.navbar-menu .navbar-item {
+    font-size: 20px;
 }

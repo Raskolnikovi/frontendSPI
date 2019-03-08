@@ -9,12 +9,60 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import {
+  MatchResults,
+  RouterHistory,
+} from '@stencil/router';
 
 
 export namespace Components {
 
-  interface SpiBof {}
-  interface SpiBofAttributes extends StencilHTMLAttributes {}
+  interface ApiAddcandidat {
+    'home': RouterHistory;
+  }
+  interface ApiAddcandidatAttributes extends StencilHTMLAttributes {
+    'home'?: RouterHistory;
+  }
+
+  interface SpiCandidat {}
+  interface SpiCandidatAttributes extends StencilHTMLAttributes {}
+
+  interface SpiEditcandidat {
+    'history': RouterHistory;
+    'match': MatchResults;
+  }
+  interface SpiEditcandidatAttributes extends StencilHTMLAttributes {
+    'history'?: RouterHistory;
+    'match'?: MatchResults;
+  }
+
+  interface SpiSearch {
+    'match': MatchResults;
+  }
+  interface SpiSearchAttributes extends StencilHTMLAttributes {
+    'match'?: MatchResults;
+  }
+
+  interface SpiCandidats {}
+  interface SpiCandidatsAttributes extends StencilHTMLAttributes {}
+
+  interface SpiEnseignant {}
+  interface SpiEnseignantAttributes extends StencilHTMLAttributes {}
+
+  interface SpiEnseignants {}
+  interface SpiEnseignantsAttributes extends StencilHTMLAttributes {}
+
+  interface SpiFormation {}
+  interface SpiFormationAttributes extends StencilHTMLAttributes {}
+
+  interface SpiFormations {}
+  interface SpiFormationsAttributes extends StencilHTMLAttributes {}
+
+  interface SpiPromotion {}
+  interface SpiPromotionAttributes extends StencilHTMLAttributes {}
+
+  interface SpiPromotions {}
+  interface SpiPromotionsAttributes extends StencilHTMLAttributes {}
 
   interface SpiHeader {}
   interface SpiHeaderAttributes extends StencilHTMLAttributes {}
@@ -28,24 +76,104 @@ export namespace Components {
 
 declare global {
   interface StencilElementInterfaces {
-    'SpiBof': Components.SpiBof;
+    'ApiAddcandidat': Components.ApiAddcandidat;
+    'SpiCandidat': Components.SpiCandidat;
+    'SpiEditcandidat': Components.SpiEditcandidat;
+    'SpiSearch': Components.SpiSearch;
+    'SpiCandidats': Components.SpiCandidats;
+    'SpiEnseignant': Components.SpiEnseignant;
+    'SpiEnseignants': Components.SpiEnseignants;
+    'SpiFormation': Components.SpiFormation;
+    'SpiFormations': Components.SpiFormations;
+    'SpiPromotion': Components.SpiPromotion;
+    'SpiPromotions': Components.SpiPromotions;
     'SpiHeader': Components.SpiHeader;
     'SpiHome': Components.SpiHome;
     'SpiRoot': Components.SpiRoot;
   }
 
   interface StencilIntrinsicElements {
-    'spi-bof': Components.SpiBofAttributes;
+    'api-addcandidat': Components.ApiAddcandidatAttributes;
+    'spi-candidat': Components.SpiCandidatAttributes;
+    'spi-editcandidat': Components.SpiEditcandidatAttributes;
+    'spi-search': Components.SpiSearchAttributes;
+    'spi-candidats': Components.SpiCandidatsAttributes;
+    'spi-enseignant': Components.SpiEnseignantAttributes;
+    'spi-enseignants': Components.SpiEnseignantsAttributes;
+    'spi-formation': Components.SpiFormationAttributes;
+    'spi-formations': Components.SpiFormationsAttributes;
+    'spi-promotion': Components.SpiPromotionAttributes;
+    'spi-promotions': Components.SpiPromotionsAttributes;
     'spi-header': Components.SpiHeaderAttributes;
     'spi-home': Components.SpiHomeAttributes;
     'spi-root': Components.SpiRootAttributes;
   }
 
 
-  interface HTMLSpiBofElement extends Components.SpiBof, HTMLStencilElement {}
-  var HTMLSpiBofElement: {
-    prototype: HTMLSpiBofElement;
-    new (): HTMLSpiBofElement;
+  interface HTMLApiAddcandidatElement extends Components.ApiAddcandidat, HTMLStencilElement {}
+  var HTMLApiAddcandidatElement: {
+    prototype: HTMLApiAddcandidatElement;
+    new (): HTMLApiAddcandidatElement;
+  };
+
+  interface HTMLSpiCandidatElement extends Components.SpiCandidat, HTMLStencilElement {}
+  var HTMLSpiCandidatElement: {
+    prototype: HTMLSpiCandidatElement;
+    new (): HTMLSpiCandidatElement;
+  };
+
+  interface HTMLSpiEditcandidatElement extends Components.SpiEditcandidat, HTMLStencilElement {}
+  var HTMLSpiEditcandidatElement: {
+    prototype: HTMLSpiEditcandidatElement;
+    new (): HTMLSpiEditcandidatElement;
+  };
+
+  interface HTMLSpiSearchElement extends Components.SpiSearch, HTMLStencilElement {}
+  var HTMLSpiSearchElement: {
+    prototype: HTMLSpiSearchElement;
+    new (): HTMLSpiSearchElement;
+  };
+
+  interface HTMLSpiCandidatsElement extends Components.SpiCandidats, HTMLStencilElement {}
+  var HTMLSpiCandidatsElement: {
+    prototype: HTMLSpiCandidatsElement;
+    new (): HTMLSpiCandidatsElement;
+  };
+
+  interface HTMLSpiEnseignantElement extends Components.SpiEnseignant, HTMLStencilElement {}
+  var HTMLSpiEnseignantElement: {
+    prototype: HTMLSpiEnseignantElement;
+    new (): HTMLSpiEnseignantElement;
+  };
+
+  interface HTMLSpiEnseignantsElement extends Components.SpiEnseignants, HTMLStencilElement {}
+  var HTMLSpiEnseignantsElement: {
+    prototype: HTMLSpiEnseignantsElement;
+    new (): HTMLSpiEnseignantsElement;
+  };
+
+  interface HTMLSpiFormationElement extends Components.SpiFormation, HTMLStencilElement {}
+  var HTMLSpiFormationElement: {
+    prototype: HTMLSpiFormationElement;
+    new (): HTMLSpiFormationElement;
+  };
+
+  interface HTMLSpiFormationsElement extends Components.SpiFormations, HTMLStencilElement {}
+  var HTMLSpiFormationsElement: {
+    prototype: HTMLSpiFormationsElement;
+    new (): HTMLSpiFormationsElement;
+  };
+
+  interface HTMLSpiPromotionElement extends Components.SpiPromotion, HTMLStencilElement {}
+  var HTMLSpiPromotionElement: {
+    prototype: HTMLSpiPromotionElement;
+    new (): HTMLSpiPromotionElement;
+  };
+
+  interface HTMLSpiPromotionsElement extends Components.SpiPromotions, HTMLStencilElement {}
+  var HTMLSpiPromotionsElement: {
+    prototype: HTMLSpiPromotionsElement;
+    new (): HTMLSpiPromotionsElement;
   };
 
   interface HTMLSpiHeaderElement extends Components.SpiHeader, HTMLStencilElement {}
@@ -67,14 +195,34 @@ declare global {
   };
 
   interface HTMLElementTagNameMap {
-    'spi-bof': HTMLSpiBofElement
+    'api-addcandidat': HTMLApiAddcandidatElement
+    'spi-candidat': HTMLSpiCandidatElement
+    'spi-editcandidat': HTMLSpiEditcandidatElement
+    'spi-search': HTMLSpiSearchElement
+    'spi-candidats': HTMLSpiCandidatsElement
+    'spi-enseignant': HTMLSpiEnseignantElement
+    'spi-enseignants': HTMLSpiEnseignantsElement
+    'spi-formation': HTMLSpiFormationElement
+    'spi-formations': HTMLSpiFormationsElement
+    'spi-promotion': HTMLSpiPromotionElement
+    'spi-promotions': HTMLSpiPromotionsElement
     'spi-header': HTMLSpiHeaderElement
     'spi-home': HTMLSpiHomeElement
     'spi-root': HTMLSpiRootElement
   }
 
   interface ElementTagNameMap {
-    'spi-bof': HTMLSpiBofElement;
+    'api-addcandidat': HTMLApiAddcandidatElement;
+    'spi-candidat': HTMLSpiCandidatElement;
+    'spi-editcandidat': HTMLSpiEditcandidatElement;
+    'spi-search': HTMLSpiSearchElement;
+    'spi-candidats': HTMLSpiCandidatsElement;
+    'spi-enseignant': HTMLSpiEnseignantElement;
+    'spi-enseignants': HTMLSpiEnseignantsElement;
+    'spi-formation': HTMLSpiFormationElement;
+    'spi-formations': HTMLSpiFormationsElement;
+    'spi-promotion': HTMLSpiPromotionElement;
+    'spi-promotions': HTMLSpiPromotionsElement;
     'spi-header': HTMLSpiHeaderElement;
     'spi-home': HTMLSpiHomeElement;
     'spi-root': HTMLSpiRootElement;
