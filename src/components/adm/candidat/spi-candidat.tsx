@@ -11,12 +11,12 @@ import { Component, State } from '@stencil/core';
 export class Candidat {
 
 
-  @State() mySearch1 : any[] = [];
-  @State() mySearch2 : any[] = [];
+  @State() mySearch1: any[] = [];
+  @State() mySearch2: any[] = [];
   @State() candidats: any[] = [];
   @State() item: any = [];
-  @State() name  : String;
- 
+  @State() name: String;
+
   InputNom: HTMLInputElement;
 
   componentWillLoad() {
@@ -35,7 +35,7 @@ export class Candidat {
     let t1 = document.getElementById("myModal");
     t1.classList.toggle("is-active");
     console.log(num);
-    let url = 'http://api-dosispi.cleverapps.io/candidats/'
+    let url = 'https://api-dosispi.cleverapps.io/candidats/'
     fetch(url + num)
       .then(response => response.json())
       .then(data => {
@@ -46,15 +46,15 @@ export class Candidat {
   }
 
   deleteCandidat(idCandidat) {
-    if(confirm("Etes-vous sûr de vouloir supprimer ce candidat?")){
-    fetch('https://api-dosispi.cleverapps.io/candidats/' + idCandidat, {
-      method: 'DELETE'
-    })
-      .then(response => {
-        console.log(response);
-        location.reload();
-      }
-      );
+    if (confirm("Etes-vous sûr de vouloir supprimer ce candidat?")) {
+      fetch('https://api-dosispi.cleverapps.io/candidats/' + idCandidat, {
+        method: 'DELETE'
+      })
+        .then(response => {
+          console.log(response);
+          location.reload();
+        }
+        );
     }
 
   }
@@ -64,31 +64,31 @@ export class Candidat {
 
 
     return (
-      
-      <div class="container">
-      
-      
-              <div class="column is-6 is-offset-3">
-                <h1 class="title">
-                  Liste des candidats
-                          </h1>
-                <h2 class="subtitle">
-                  Projet SPI-ADM DOSI 2018-2019
-                          </h2>
-                <div class="box">
-                  <div class="field is-grouped">
-                    <p class="control is-expanded">
 
-                      <input  onInput={(e: any) => this.name=e.target.value} class="input" type="text" placeholder="Rechercher.." />
-                    </p>
-                    <p class="control">
-                    
-                      <a href={"/candidats/search/"+this.name} class="button is-info">Valider</a>
-                    </p>
-                  </div>
-                </div>
-              </div>
-        <br/><br/>
+      <div class="container">
+
+
+        <div class="column is-6 is-offset-3">
+          <h1 class="title">
+            Liste des candidats
+                          </h1>
+          <h2 class="subtitle">
+            Projet SPI-ADM DOSI 2018-2019
+                          </h2>
+          <div class="box">
+            <div class="field is-grouped">
+              <p class="control is-expanded">
+
+                <input onInput={(e: any) => this.name = e.target.value} class="input" type="text" placeholder="Rechercher.." />
+              </p>
+              <p class="control">
+
+                <a href={"/candidats/search/" + this.name} class="button is-info">Valider</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <br /><br />
 
         <div class="row columns">
           <div class="row columns is-multiline">
@@ -111,14 +111,14 @@ export class Candidat {
                       </div>
                     </div>
                     <div class="content has-text-left">
-                    <b>Promo :   </b> <span> {candidat.promotion == null ? "Pas de promotion" : candidat.promotion.id.codeFormation + " | " + candidat.promotion.id.anneeUniversitaire} </span> 
+                      <b>Promo :   </b> <span> {candidat.promotion == null ? "Pas de promotion" : candidat.promotion.id.codeFormation + " | " + candidat.promotion.id.anneeUniversitaire} </span>
                       <br />
                       <span><b>Nationalité :  </b>{candidat.nationalite} </span>
                       <br />
                       <span><b>Université d'origine :  </b>{candidat.universiteOrigine}</span>
                       <br />
 
-                      </div>
+                    </div>
                   </div>
                   <button class="card-footer-item button is-info" aria-label="close" onClick={() => this.getens(candidat.noCandidat)}>Détails</button>
                   &nbsp;&nbsp;&nbsp;
@@ -136,8 +136,8 @@ export class Candidat {
                       <button class="delete" aria-label="close" onClick={() => this.getens(candidat.noCandidat)}></button>
                     </header>
                     <section class="modal-card-body">
-                    
-                    <b>Promo :   </b> <span> {this.item.promotion == null ? "Pas de promotion" : this.item.promotion.id.codeFormation + " | " + this.item.promotion.id.anneeUniversitaire} </span> 
+
+                      <b>Promo :   </b> <span> {this.item.promotion == null ? "Pas de promotion" : this.item.promotion.id.codeFormation + " | " + this.item.promotion.id.anneeUniversitaire} </span>
                       <br />
                       <span><b>Nationalité :  </b>{this.item.nationalite} </span>
                       <br />
@@ -151,10 +151,10 @@ export class Candidat {
                       <br />
                       <span><b>Adresse :  </b>{this.item.adresse}</span>
                       <br />
-                      
 
 
-                      
+
+
                     </section>
                     <footer class="modal-card-foot">
                       <button class="button is-danger is-outlined" onClick={() => this.deleteCandidat(this.item.noCandidat)}>Supprimer</button>
